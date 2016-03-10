@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 设置开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 把action扩展名配置为action -->
+	<constant name="struts.action.extension" value="do" />
+	<!-- 指定主题使用simple（默认值为xhtml） -->
+	<constant name="struts.ui.theme" value="simple" />
+
+	<!-- 可以把相关的action都放在一个package中，以便于管理，形成模块 -->
+	<package name="default" extends="struts-default">
+
+	</package>
+</struts>
+
+
