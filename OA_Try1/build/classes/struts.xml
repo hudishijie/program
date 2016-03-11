@@ -13,8 +13,25 @@
 	<constant name="struts.ui.theme" value="simple" />
 
 	<!-- 可以把相关的action都放在一个package中，以便于管理，形成模块 -->
-	<package name="default" extends="struts-default">
-
+	<package name="default" namespace="/" extends="struts-default">
+		<!-- 测试Action -->
+		<action name="Test" class="testAction">
+			<result name="success">/test.jsp</result>
+		</action>
+		
+		<!-- 岗位管理 -->
+		<action name="role_*" class="roleAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/roleAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/roleAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">role_list</result>
+		</action>
+		
+		<!-- 部门管理 -->
+		<action name="department_*" class="departmentAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/departmentAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/departmentAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">department_list</result>
+		</action>
 	</package>
 </struts>
 

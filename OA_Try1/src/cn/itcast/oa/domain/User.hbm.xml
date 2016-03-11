@@ -7,5 +7,20 @@
 			<generator class="native"></generator>
 		</id>
 		<property name="name" column="name"></property>
+		<property name="loginName" column="loginName" unique="true"></property>
+		<property name="password" column="password"></property>
+		<property name="gender" column="gender"></property>
+		<property name="telephone" column="telephone"></property>
+		<property name="email" column="email"></property>
+		<property name="description" column="description"></property>
+		
+		<!-- department属性，表示我与Department是多对一的关系 -->
+		<many-to-one name="department" class="Department" column="departmentId"></many-to-one>
+		
+		<!-- roles属性，表示我与Role是多对多的关系 -->
+		<set name="roles" table="itcast_user_role">
+			<key column="userId"></key>
+			<many-to-many class="Role" column="roleId"></many-to-many>
+		</set>
 	</class>
 </hibernate-mapping>
